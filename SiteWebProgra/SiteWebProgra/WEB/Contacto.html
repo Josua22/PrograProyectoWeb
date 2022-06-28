@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to Create responsive Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleContacto.css">    
+	
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet" 
+	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+	crossorigin="anonymous">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+	
+</head>
+<body>
+    <header>
+		<div class="wrapper">
+				<div class="logo">
+					<img src="https://i.postimg.cc/mg4rWBmv/logo.png" alt="">
+				</div>
+				
+				
+				<ul class="nav-area">
+            <li>
+			    <a id="opc1" href="#">Inicio</a>
+			    <ul id="cont1" class="sub">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#">opcion2</a></li>
+                        <li><a href="#">opcion3</a></li>
+                        <li><a href="#">opcion4</a></li>
+                </ul>
+			</li>
+            <li><a id="opc2" href="#">Info de empresa</a>
+			    <ul id="cont2" class="sub">
+                        <li><a href="https://softwaresolutionscr.com/muestraSof.php">Datos de la tabla</a></li>
+                        <li><a href="#">opcion2</a></li>
+                        <li><a href="#">opcion3</a></li>
+                        <li><a href="#">opcion4</a></li>
+                </ul>
+			</li>
+				
+            <li><a id="opc3" href="#">Servicios</a>
+			    <ul id="cont3" class="sub">
+                        <li><a href="#">opcion1</a></li>
+                        <li><a href="#">opcion2</a></li>
+                        <li><a href="#">opcion3</a></li>
+                        <li><a href="#">opcion4</a></li>
+                </ul>
+			</li>
+            <li><a id="opc4" href="#">Contacto</a>
+			    <ul id="cont4" class="sub">
+                        <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+			</li>
+			
+        </ul>
+				
+				
+		<script>
+
+		   $("#opc1").click(function() {
+		   $("#cont1").toggle(1500);
+		   },function(){ 
+		   $("#cont1").toggle(1500);
+		   $("#cont2").hide(1500);
+		   $("#cont3").hide(1500);
+		   $("#cont4").hide(1500);
+		   });
+		   
+		   $("#opc2").click(function() {
+		   $("#cont2").toggle(1500);
+		   },function(){ 
+		   $("#cont2").toggle(1500);
+		   $("#cont1").hide(1500);
+		   $("#cont3").hide(1500);
+		   $("#cont4").hide(1500);
+		   });
+		   
+		   $("#opc3").click(function() {
+		   $("#cont3").toggle(1500);
+		   },function(){ 
+		   $("#cont3").toggle(1500);
+		   $("#cont2").hide(1500);
+		   $("#cont1").hide(1500);
+		   $("#cont4").hide(1500);
+		   });
+		   
+		   $("#opc4").click(function() {
+		   $("#cont4").toggle(1500);
+		   },function(){ 
+		   $("#cont4").toggle(1500);
+		   $("#cont2").hide(1500);
+		   $("#cont3").hide(1500);
+		   $("#cont1").hide(1500);
+		   });
+			
+			$(document).ready(function(){
+			  $(".botonEnviar").mouseenter(function(){
+				$(".botonEnviar").css("background-color", "green");
+			});
+			});
+			
+			$(document).ready(function(){
+			  $(".botonEnviar").mouseleave(function(){
+				$(".botonEnviar").css("background-color", "#1f53c5");
+			  });
+			});
+			
+			$(document).ready(function(){
+			  $(".botonEnviar").click(function(){
+					var nombre = $("#Ip_nombres").val();
+					var apellidos = $("#Ip_apellidos").val();
+					var correo = $("#Ip_correo").val();
+					var telefono = $("#Ip_telefono").val();
+					var mensaje = $("#Ip_mensaje").val();
+					
+					if (nombre == "" || apellidos == "" || correo == "" || telefono == "" ||mensaje == ""){
+						alert("Campos vacios");
+					}
+			  });
+			});
+			</script>	
+		</div>
+		
+		<div class="welcome-text"><h1>Contacto</h1>
+								   <p>Envianos un mensaje si tenés más consultas o si necesitás información adicional. </p>
+								   <p>Nuestro equipo de Servicio al Cliente estará en contacto con vos.</p>
+									<section class="DatosContacto">
+											<input class="CajaTexto" type="text" name="nombres" id="Ip_nombres" placeholder="Ingrese su Nombre">
+											<input class="CajaTexto" type="text" name="apellidos" id="Ip_apellidos" placeholder="Ingrese su Apellido">
+											<input class="CajaTexto" type="email" name="correo" id="Ip_correo" placeholder="Ingrese su Correo">
+											<input class="CajaTexto" type="text" name="telefono" id="Ip_telefono" placeholder="Ingrese su número de teléfono">
+											<textarea class="MensajeTexto" type="text" name="mensaje" id="Ip_mensaje" placeholder="Mensaje"></textarea>
+										<input class="botonEnviar" type="submit" value="Enviar">
+									</section>																			
+		</div>
+		
+	</header>
+</body>
+</html>

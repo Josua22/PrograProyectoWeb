@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to Create responsive Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">    
+	
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet" 
+	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+	crossorigin="anonymous">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
+	
+</head>
+<body  onload="saludo()" onunload="despedida()">
+
+    <script type="text/javascript">
+        function saludo() {alert('Bienvenido a la página de SoftwareSolution')}
+        function despedida() {alert('Gracias por tu visita')}
+    </script>
+	
+    <header>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://i.postimg.cc/mg4rWBmv/logo.png" alt="">
+        </div>
+		
+		
+        <ul class="nav-area">
+            <li>
+			    <a id="opc1" href="#">Inicio</a>
+			    <ul id="cont1" class="sub">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">opcion2</a></li>
+                        <li><a href="#">opcion3</a></li>
+                        <li><a href="#">opcion4</a></li>
+                </ul>
+			</li>
+            <li><a id="opc2" href="#">Info de empresa</a>
+			    <ul id="cont2" class="sub">
+                        <li><a href="C:\Users\Josua M\Source\Repos\Josua22\PrograProyectoWeb\SiteWebProgra\SiteWebProgra\WEB\muestraSof.html">Datos de la tabla</a></li>
+                        <li><a href="#">opcion2</a></li>
+                        <li><a href="#">opcion3</a></li>
+                        <li><a href="#">opcion4</a></li>
+                </ul>
+			</li>
+				
+            <li><a id="opc3" href="#">Servicios</a>
+			    <ul id="cont3" class="sub">
+                        <li><a href="#">opcion1</a></li>
+                        <li><a href="#">opcion2</a></li>
+                        <li><a href="#">opcion3</a></li>
+                        <li><a href="#">opcion4</a></li>
+                </ul>
+			</li>
+            <li><a id="opc4" href="#">Contacto</a>
+			    <ul id="cont4" class="sub">
+                        <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+			</li>	
+        </ul>
+		
+		
+<script>
+   
+   
+   $(document).ready(function() {
+   $("#basic-form").validate();
+   });
+
+   $("#opc1").click(function() {
+   $("#cont1").toggle(1000);
+   },function(){ 
+   $("#cont1").toggle(1000);
+   $("#cont2").hide(1000);
+   $("#cont3").hide(1000);
+   $("#cont4").hide(1000);
+   });
+   
+   $("#opc2").click(function() {
+   $("#cont2").toggle(1000);
+   },function(){ 
+   $("#cont2").toggle(1000);
+   $("#cont1").hide(1000);
+   $("#cont3").hide(1000);
+   $("#cont4").hide(1000);
+   });
+   
+   $("#opc3").click(function() {
+   $("#cont3").toggle(1000);
+   },function(){ 
+   $("#cont3").toggle(1000);
+   $("#cont2").hide(1000);
+   $("#cont1").hide(1000);
+   $("#cont4").hide(1000);
+   });
+   
+   $("#opc4").click(function() {
+   $("#cont4").toggle(1000);
+   },function(){ 
+   $("#cont4").toggle(1000);
+   $("#cont2").hide(1000);
+   $("#cont3").hide(1000);
+   $("#cont1").hide(1000);
+   });
+   
+	
+</script>
+		
+</div>
+
+	<div class="welcome-text">
+			<h1 id="welcome">Software<span>Solutions</span></h1>
+	</div>
+	
+</header>
+
+<form id="basic-form" action="" method="post">
+    <p>
+      <label for="name" style="color: white;">Nombre <span>(Se requiere al menos 3 caracteres)</span></label>
+      <input id="name" name="name" minlength="3" type="text" required>
+    </p>
+    <p>
+      <label for="email" style="color: white;" >E-Mail <span>(requerido)</span></label>
+      <input id="email" type="email" name="email" required>
+    </p>
+    <p>
+      <input id="submit"class="submit" type="submit" value="Inicio de sesión">
+    </p>
+</form>
+
+
+
+	
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<html>
+<head>
+
+<script>
+function Buscador() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("txtBuscar");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("milista");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }      
+  }
+}
+
+</script>
+
+    <style>
+      table {
+      border-collapse: collapse;
+      width: 100%;
+      }
+
+     th, td {
+     text-align: left;
+     padding: 8px;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2}
+
+    th {
+    background-color: #6392ab;
+    color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+
+ <p>Digite Nombre</p>
+  <input id="txtBuscar" type="text" onkeyup="Buscador()" placeholder="Buscando...">
+
+
+
+<table id="milista">
+  <tr>
+  <th><font face="verdana"><b>ID</b></font></th>
+  <th><font face="verdana"><b>Cédula</b></font></th>
+  <th><font face="verdana"><b>Nombre</b></font></th>
+  <th><font face="verdana"><b>Apellidos</b></font></th>
+  <th><font face="verdana"><b>Correo</b></font></th>
+  <th><font face="verdana"><b>Teléfono</b></font></th>
+  <th><font face="verdana"><b>Dirección</b></font></th>
+  <th><font face="verdana"><b>Fecha Registro</b></font></th>
+  </tr>
+  
+   <input id="btnInsert" type="submit" onkeyup="Inserte()" placeholder="gregndo...">
+  
+  
+  <?php  
+    require ("conexion.php");
+
+    $query ="SELECT * FROM sof_personas";
+
+    $result = mysql_query($query);
+    $numero = 0;
+    while($row = mysql_fetch_array($result))
+    {
+      echo "<tr><td width=\"25%\"><font face=\"verdana\">" . 
+        $row["Id"] . "</font></td>";
+		
+      echo "<td width=\"25%\"><font face=\"verdana\">" . 
+        $row["Cedula"] . "</font></td>";
+		
+      echo "<td width=\"25%\"><font face=\"verdana\">" . 
+	      $row["Nombre"] . "</font></td>";
+		  
+	 echo "<td width=\"25%\"><font face=\"verdana\">" . 
+	      $row["Apellido"] . "</font></td>";	  
+	
+     echo "<td width=\"25%\"><font face=\"verdana\">" . 
+	      $row["Correo"] . "</font></td>";		
+		  
+	 echo "<td width=\"25%\"><font face=\"verdana\">" . 
+	      $row["Telefono"] . "</font></td>";	
+      echo "<td width=\"25%\"><font face=\"verdana\">" . 
+	      $row["Direccion"] . "</font></td>";
+      echo "<td width=\"25%\"><font face=\"verdana\">" . 
+	      $row["FechaRegistro"] . "</font></td>";
+
+
+      $numero++;
+    }
+    echo "<tr><td colspan=\"15\"><font face=\"verdana\"><b>Número: " . $numero . 
+        "</b></font></td></tr>";
+		
+		
+		
+		
+    ?>
+	
+	</table>
+	
+	</body>
+	</html>
