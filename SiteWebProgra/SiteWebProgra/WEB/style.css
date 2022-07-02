@@ -16,6 +16,8 @@ body {
 	background-size: cover;
 	background-position: center center;
 	position: relative;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 .nav-area {
 	float: right;
